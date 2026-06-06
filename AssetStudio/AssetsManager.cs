@@ -59,7 +59,14 @@ namespace AssetStudio
             assetsFileListHash.Clear();
 
             ReadAssets();
-            ProcessAssets();
+            try
+            {
+                ProcessAssets();
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
 
         private void LoadFile(string fullName)
